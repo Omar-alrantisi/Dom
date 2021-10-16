@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing colors</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+   
+</head>
+<body>
+<div id="mydiv"></div>
+<script>
+let box =document.getElementById("mydiv");
+box.style.backgroundColor="blue";
+box.addEventListener("click",changeColor);
+let count=1;
+function changeColor(){
+    
+    if (count===1){
+        box.style.backgroundColor="red";
+        count++;
+    }
+    else if(count===2){
+        box.style.backgroundColor="green";
+        count++;
+    }
+    else if(count===3){
+        box.style.backgroundColor="blue";
+        count++;
+    }
+    else{
+        count=1;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    let box=document.getElementById("mydiv");
+//    let counter=0;
+//    box.style.background="blue";
+//    box.addEventListener("click",()=> {counter++;changeColor();})
+//    function changeColor(){
+//        if(counter===1){
+//         box.style.background="red";
+           
+//        }
+//        else if(counter===2){
+//         box.style.background="green";
+           
+//        }
+//        else if(counter===3){
+//         box.style.background="blue";
+           
+//        }
+//        else{
+//            counter=0;
+//        }
+//    }
+</script>
+</body>
+</html>

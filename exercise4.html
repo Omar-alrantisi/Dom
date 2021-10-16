@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #4: Formatting text</title>
+    <style>
+        div {
+            width: 600px;
+            height: 100px;
+            border: 1px solid black;
+            margin-top: 10px;
+            /* default options */
+            font-family: Arial;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+<form name="form">
+    <select name="font_family" id="font_family">
+        <option value="Arial" selected>Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+    </select>
+    <select name="font_size" id="font_size">
+        <option value="8pt">8pt</option>
+        <option value="10pt">10pt</option>
+        <option value="12pt" selected>12pt</option>
+        <option value="14pt">14pt</option>
+        <option value="16pt">16pt</option>
+    </select>
+    <label>Italic <input type="checkbox" name="font_italic" id="font_italic"></label>
+    <label>Bold <input type="checkbox" name="font_bold" id="font_bold"></label>
+    <label>Underline <input type="checkbox" name="font_underline" id="font_underline"></label>
+</form>
+
+<div id="text">The quick brown fox jumps over the lazy dog</div>
+
+<script>
+    let font=document.getElementById("font_family");
+    font.addEventListener("change",(changeFont)=>{
+        let result=document.getElementById("text");
+        result.style.fontFamily=` ${changeFont.target.value}`;
+    });
+    let font_2=document.getElementById("font_size");
+    font_2.addEventListener("change",(changeSize)=>{
+        let result_2=document.getElementById("text");
+        result_2.style.fontSize=` ${changeSize.target.value}`;
+    });
+    let font_3=document.getElementById("font_italic");
+    font_3.addEventListener("change",(changeStyle)=>{
+        let result_3=document.getElementById("text");
+        if(font_3.checked){
+            result_3.style.fontStyle="italic"
+        }
+        else {
+            result_3.style.fontStyle="normal"
+        }
+        
+        
+        
+    });
+    let font_4=document.getElementById("font_bold");
+    font_4.addEventListener("change",(changeStyle)=>{
+        let result_4=document.getElementById("text");
+        if(font_4.checked){
+            result_4.style.fontWeight="bold"
+        }
+        else {
+            result_4.style.fontWeight="normal"
+        }
+        
+        
+        
+    });
+
+    let font_5=document.getElementById("font_underline");
+    font_5.addEventListener("change",(changeStyle)=>{
+        let result_5=document.getElementById("text");
+        if(font_5.checked){
+            result_5.style.textDecoration="underline"
+        }
+        else {
+            result_5.style.textDecoration="none"
+        }
+        
+        
+        
+    });
+
+    
+    
+</script>
+</body>
+
+</html>
